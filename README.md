@@ -93,11 +93,12 @@ def fetch_director(obj):
 
 Step 2 : 
 
-- Remove stopwards from the tags features.
+- Remove stopwards from the tags features and do the stemming .
 
 - Now to have to create vector of the tags features using bag of words technique .
 
--  Bag of Words
+- Bag of Words
+
 
 
 
