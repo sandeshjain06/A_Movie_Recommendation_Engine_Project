@@ -1,6 +1,7 @@
 # Movie_Recommendation_Engine
 
-Objective - Recommend movies to users based on user preferences.
+Objective - User will search a particular movie , based on that movie we have to give recommendation of 
+some other movie which has same attribues.
 
 Click to check the dataset : https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv
 
@@ -16,7 +17,7 @@ Types of Recommendation Engines.
 
 
 
-2 Datasets are available 
+Below are the Datasets details 
 
 - movies (4803, 20)  / credits (4813, 4)
 
@@ -29,7 +30,7 @@ Types of Recommendation Engines.
 - Credits columns are ['movie_id','title','cast','crew']
 
 
-Steps :
+Steps 1 : EDA and Feature Engineering 
 
 - Join 2 tables on basis of title - new_movies_df = movies.merge(credits,on='title')
 
@@ -81,6 +82,31 @@ def fetch_director(obj):
             L.append(i['name'])
             break
         return L 
+
+
+- Now we have to remove the spaces in the value of some of the features and join all the features as informed earlier.
+
+- new_movies_df['tags']=new_movies_df['overview'] + new_movies_df['genres'] + new_movies_df['keywords'] + new_movies_df['cast']
+
+- The new dataset will have 3 features - movie_id,title and tags.
+
+
+Step 2 : 
+
+- Remove stopwards from the tags features.
+
+- Now to have to create vector of the tags features using bag of words technique .
+
+-  Bag of Words
+
+
+
+
+
+
+
+
+
 
 
 
