@@ -43,6 +43,7 @@ Steps :
 
 - Here , 5 features such as 'overview','genres','keywords','cast','crew' are in the form of dictionary so we have to convert that into List and have to merge it into single features such as tags where all the information of particular movie will be available such as overview , top 3 actors from every movie , generes , keywords ,director name
 
+
 - import ast
 def convert_string_tolist(obj):
     L = []
@@ -54,10 +55,32 @@ def convert_string_tolist(obj):
 - For generes and keywords , apply above function to extract only the name from the given dictionary.
 
 
-- 
+- import ast
+def convert_string_tolist_cast(obj):
+    L = []
+    counter =0
+    for i in ast.literal_eval(obj):
+        if counter!=3:
+            L.append(i['name'])
+            counter=counter+1
+        else:
+            break
+    return L    
 
 
+- In Cast , select top 3 characters.
 
+
+- In crew , check for the job = 'Director' 
+
+import ast
+def fetch_director(obj):
+    L = []
+    for i in ast.literal_eval(obj.replace('\r','\\r').replace('\n','\\n').replace('\n','\\n')):
+        if i['job'] == 'Director':
+            L.append(i['name'])
+            break
+        return L 
 
 
 
