@@ -1,11 +1,11 @@
 # Movie_Recommendation_Engine
 
-Objective - User will search a particular movie , based on that movie we have to give recommendation of 
+- Objective - User will search a particular movie , based on that movie we have to give recommendation of 
 some other movie which has same attribues.
 
-Click to check the dataset : https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv
+- Click to check the dataset : https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv
 
-Click to check the website hosted on Heroku platform : https://movies-recommendationengine.herokuapp.com/
+- Click to check the website hosted on Heroku platform : https://movies-recommendationengine.herokuapp.com/
 
 
 Types of Recommendation Engines.
@@ -15,6 +15,9 @@ Types of Recommendation Engines.
 
 2. Collaborative Filtering - In this strategy is based on the combination of the user’s behavior and comparing and contrasting that with other users’ behavior in the database. 
 
+- Screenshot of the Application :
+
+![image](https://user-images.githubusercontent.com/91243691/165061071-ecb38254-b870-4dee-b26f-465b611143e3.png)
 
 
 Below are the Datasets details 
@@ -133,7 +136,9 @@ def recommend(movie):
 
 - Create website on pycharm using streamlit .
 
+- To fetch images , we have to use API from TMDB website and provide the API key and movies id , which will return JSON and we have to take the poster path.
 
+![image](https://user-images.githubusercontent.com/91243691/165061071-ecb38254-b870-4dee-b26f-465b611143e3.png)
 
 
 
