@@ -34,6 +34,9 @@ Steps 1 : EDA and Feature Engineering
 
 - Join 2 tables on basis of title - new_movies_df = movies.merge(credits,on='title')
 
+![image](https://user-images.githubusercontent.com/91243691/165027743-e2f82f3c-019a-49c8-9b94-af0438a2f04c.png)
+
+
 - Here is the list of columns which are required to recommend movies 
 
 - new_movies_df = new_movies_df[['movie_id','title','overview','genres','keywords','cast','crew']]
@@ -99,9 +102,36 @@ Step 2 :
 
 - Bag of Words
 
+-  This method turns text into fixed-length vectors by simply counting the number of times a word appears in a document, a process referred to as vectorization.
+
+- from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer(max_features=5000,stop_words='english')
+vectors = cv.fit_transform(new_movies_df['tags']).toarray()
 
 
+- Now to we have the vector representation for every movie , we have to calculate the distance between every movies so that we can get the similarity of the movies , but we apply cosine similarity formula to calcluate the distances.
 
+
+- from sklearn.metrics.pairwise import cosine_similarity
+similarity = cosine_similarity(vectors)
+
+
+- Recommend function is to fetch the index of movie that has user has entered and fetch particular movie vector values and we have to sorted the vector values to get the top 5 movies which are similar to the user mentioned movies and then print it .   
+
+def recommend(movie):
+    movie_index = new_movies_df[new_movies_df['title'] == movie].index[0]
+    distances = similarity[movie_index]
+    movies_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:6]
+    for i in movies_list:
+        print(new_movies_df.iloc[i[0]].title)
+
+
+- Output
+
+![image](https://user-images.githubusercontent.com/91243691/165027610-fe6efbd4-eebc-4050-927a-1d0d61fa241f.png)
+
+
+- Create website on pycharm using streamlit .
 
 
 
