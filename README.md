@@ -5,7 +5,7 @@ some other movie which has same attribues.
 
 Click to check the dataset : https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv
 
-Click to check the website on Heroku platform : https://movies-recommendationengine.herokuapp.com/
+Click to check the website hosted on Heroku platform : https://movies-recommendationengine.herokuapp.com/
 
 
 Types of Recommendation Engines.
